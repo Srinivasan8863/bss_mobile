@@ -11,7 +11,6 @@ $category_name=getCategoryName($category_id);
 <?php
 for($i=0;$i<count($products);$i++)
 {
-    $postID=$products[$i]->products_id;
 ?>
 
     <a class="list-group-item list-group-item-action" style="padding:5px;margin:5px;" aria-current="true">
@@ -83,7 +82,7 @@ for($i=0;$i<count($products);$i++)
                             <button type="button" onclick="removeQuantity(<?php echo $products[$i]->products_id; ?>);" class="btn btn-primary" id="qtyminus<?php echo $products[$i]->products_id; ?>">-</button>
                         </div>
                         <input type="text" readonly class="form-control" maxlength="4" size="4" name="qty<?php echo $products[$i]->products_id; ?>" 
-                        id="qty<?php echo $products[$i]->products_id; ?>" value="<?php echo $cartquantity; ?>" style="margin-top: -20px;">
+                        id="qty<?php echo $products[$i]->products_id; ?>" value="<?php echo $cartquantity; ?>" style="margin-top: 20px;">
                         <div class="input-group-btn">
                             <button type="button" onclick="addQuantity(<?php echo $products[$i]->products_id; ?>);" class="btn btn-primary" id="qtyplus<?php echo $products[$i]->products_id; ?>">+</button>
                         </div>
@@ -98,8 +97,4 @@ for($i=0;$i<count($products);$i++)
 <?php
 }
 ?>
-</div>
-<div class="load-more" lastID="<?php echo $postID; ?>" style="display: none;">
-        <img src="loading.gif"/>
-    </div>
 </div>

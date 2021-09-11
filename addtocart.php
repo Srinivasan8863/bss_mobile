@@ -25,7 +25,7 @@ if(count($cart_array)==0)
 }
 else
 {
-   echo $sql="UPDATE customers_basket SET customers_basket_quantity='".$quantity."', final_price='".$final_price."' WHERE session_id='".$sessionid."' AND options_id='".$option_id."'";
+    $sql="UPDATE customers_basket SET customers_basket_quantity='".$quantity."', final_price='".$final_price."' WHERE session_id='".$sessionid."' AND options_id='".$option_id."'";
     $query = $dbh->prepare($sql);
     $query->execute();
     echo "Product Updated to Cart successfully";

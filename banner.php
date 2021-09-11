@@ -1,7 +1,7 @@
 <?php
 $bannerlist=banners();
 ?>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom:5px; width:100%; display:none">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom:5px;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <?php
@@ -17,7 +17,7 @@ $bannerlist=banners();
         for($i=0;$i<count($bannerlist);$i++)
         {?>
       <div class="item <?php if($i==0) { ?> active <?php } ?>">
-        <a href="<?php echo $bannerlist[$i]->link; ?>"><img src="images/banners/<?php echo $bannerlist[$i]->imagename; ?>" alt="BSS" style="width:100%; height:165px"></a>
+        <a href="<?php echo $bannerlist[$i]->link; ?>"><img src="images/banners/<?php echo $bannerlist[$i]->imagename; ?>" alt="BSS" style="width:100%;"></a>
       </div>
       <?php } ?>
     </div>

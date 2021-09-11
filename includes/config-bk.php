@@ -1,9 +1,9 @@
 <?php
 // DB credentials.
 define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
-define('DB_NAME','shopping_cart');
+define('DB_USER','u655384431_shopping_cart');
+define('DB_PASS','shoppingCart@123456');
+define('DB_NAME','u655384431_shopping_cart');
 session_start();   
 function connectdb()
 {
@@ -64,7 +64,7 @@ function products($category_id=0)
     //echo $category_id
     if($category_id!="" && $category_id>0)
         $condition="AND (category_id='".$category_id."' OR subcategory_id='".$category_id."')";
-    $sql="SELECT * FROM products WHERE products_status='1'".$condition."ORDER BY products_id DESC  LIMIT 10";
+    $sql="SELECT * FROM products WHERE products_status='1'".$condition;
     $result = $dbh->prepare($sql);
     $result->execute();
     $product_array=$result->fetchAll(PDO::FETCH_OBJ);
@@ -219,15 +219,5 @@ function getMyProfile()
     $result->execute();
     $customer_array=$result->fetchAll(PDO::FETCH_OBJ);
     return $customer_array;
-}
-function banners()
-{
-    $dbh = connectdb();
-    $banner_array=array();
-    $sql="SELECT * FROM banners WHERE status='1'";
-    $result = $dbh->prepare($sql);
-    $result->execute();
-    $banner_array=$result->fetchAll(PDO::FETCH_OBJ);
-    return $banner_array;
 }
 ?>

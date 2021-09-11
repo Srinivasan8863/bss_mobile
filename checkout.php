@@ -236,6 +236,7 @@ jQuery(".state-validate").each(function(){
 
 jQuery(".pincode-validate").each(function(){
 	if(this.value == '' || isNaN(this.value) || this.value.length < 6) {
+    {
 			jQuery(this).css('border-color', 'red');
 			jQuery(this).parents(".input-group").addClass('has-error');
             jQuery(this).next(".error-content").css('color', 'red');
@@ -292,7 +293,6 @@ if(error!="")
     return false;
 }
 });
-
 </script>
 </body>
 </html>
