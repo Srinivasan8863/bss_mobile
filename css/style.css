@@ -73,6 +73,11 @@ body, html {
 	right: 0;
 	z-index: 99;
   }
+  .quantity{
+	margin-left: 1px!important;
+    width: 20px!important;
+    padding: 4px!important;
+  }
   
   /*hide the items when the select box is closed:*/
   .select-hide {
@@ -82,6 +87,14 @@ body, html {
   .select-items div:hover, .same-as-selected {
 	background-color: rgba(0, 0, 0, 0.1);
   }
+
+.btn-primary {
+	color: #000!important;
+    background-color: #ffffff!important;
+    border-color: #9a9a9a!important;
+    border-radius: 20px!important;
+}
+}
 
 .iKjNnb {
 	height: 8px;

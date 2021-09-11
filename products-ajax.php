@@ -82,7 +82,7 @@ for($i=0;$i<count($products);$i++)
                         <div class="input-group-btn">
                             <button type="button" onclick="removeQuantity(<?php echo $products[$i]->products_id; ?>);" class="btn btn-primary" id="qtyminus<?php echo $products[$i]->products_id; ?>">-</button>
                         </div>
-                        <input type="text" readonly class="form-control" maxlength="4" size="4" name="qty<?php echo $products[$i]->products_id; ?>" 
+                        <input type="text" readonly class="quantity form-control" maxlength="4" size="4" name="qty<?php echo $products[$i]->products_id; ?>" 
                         id="qty<?php echo $products[$i]->products_id; ?>" value="<?php echo $cartquantity; ?>" style="margin-top: -20px;">
                         <div class="input-group-btn">
                             <button type="button" onclick="addQuantity(<?php echo $products[$i]->products_id; ?>);" class="btn btn-primary" id="qtyplus<?php echo $products[$i]->products_id; ?>">+</button>
