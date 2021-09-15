@@ -2,6 +2,7 @@
 function showProducts(categoryid)
 {
    // var lastID = $('.load-more').attr('lastID');
+   selectedItem();
     $("#productlist").load("products-ajax.php?category_id="+categoryid);  
 }
 function addtocart(productid)

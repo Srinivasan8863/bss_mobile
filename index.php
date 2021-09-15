@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Khula&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -28,30 +26,33 @@
 -->
     <?php
     @include("includes/config.php");
-    @include("header.php");
+    // @include("header.php");
     // @include("banner.php");
     ?>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
-                <?php @include("category.php"); ?>
-            </div>
-            <div class="col-sm-6">
+            <div class="col-sm-12 col-xs-12 col-md-12 header-fixed">
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-search"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Search" autocomplete="off" id="searchterm" />
-
+                        <input type="text" class="form-control" placeholder="Search" autocomplete="off" 
+                                id="searchterm" />
                     </div>
                 </div>
+            </div>
+            <div class="col-sm-3 category-fixed">
+                <?php @include("category.php"); ?>
+            </div>
+            <div class="col-sm-6 products-list">
+                
                 <div id="productlist">
                     <?php @include("products.php"); ?>
                 </div>
             </div>
-            <div class="col-sm-3" id="cartlist">
+            <div class="col-sm-3 cart-fixed" id="cartlist">
                 <?php @include("cart.php"); ?>
             </div>
         </div>
@@ -59,6 +60,7 @@
     <?php @include("scripts.php"); ?>
     <script type="text/javascript">
         $(document).ready(function() {
+
             $(window).scroll(function() {
                 var lastID = $('.load-more').attr('lastID');
                 var categoryid = $("#category_id").val();
@@ -101,7 +103,10 @@
 
         });
         $('.carousel').carousel();
+        selectedItem();
+    function selectedItem() {
 
+        
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
         x = document.getElementsByClassName("custom-select");
@@ -181,6 +186,7 @@
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
+    }
     </script>
 </body>
 

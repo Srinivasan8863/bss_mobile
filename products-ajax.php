@@ -19,7 +19,7 @@ for($i=0;$i<count($products);$i++)
             <div class="col-xs-2 col-sm-2 col-md-2">
                 <img src="images/product_images/<?php echo $products[$i]->products_image; ?>" alt="<?php echo $products[$i]->products_name; ?>" class="img-thumbnail">
             </div>
-            <div class="col-xs-7 col-sm-7 col-md-7">
+            <div class="col-xs-6 col-sm-6 col-md-7">
                 <div style="float:left;"><b><?php echo $products[$i]->products_name; ?></b></div><br>
                 <?php
                 $options=getProductOptions($products[$i]->products_id);
@@ -36,24 +36,27 @@ for($i=0;$i<count($products);$i++)
                     {
                 ?>
                 <br>
-                <select name="option_id<?php echo $options[0]->option_id;?>" id="option_id<?php echo $products[$i]->products_id;?>" class="optionid" 
-                    onchange="showAddButton(<?php echo $products[$i]->products_id;?>,this.value);">
-                <?php
-                        for($j=0;$j<count($options);$j++)
-                        {
-                            $cart_array=getCartOptions($options[$j]->option_id);
-                ?>
-                            <option value="<?php echo $options[$j]->option_id;?>" <?php if (in_array($options[$j]->option_id, $cart_array)){ ?>selected="selected"<?php } ?>>
-                            <?php echo $options[$j]->weight;?><?php echo $options[$j]->unit;?> - &#8377;<?php echo $options[$j]->price;?>
-                            <?php if($options[$j]->discount_price>0){?>
-                                <del><?php echo $options[$j]->discount_price;?></del>
-                            <?php } ?>
-                            </option>
-                    <?php
-                        }
-                    ?>
-                        
-                        </select><br>
+                <!-- <div class="custom-select" style="width:120px;"> -->
+                    <select name="option_id<?php echo $options[0]->option_id;?>" id="option_id<?php echo $products[$i]->products_id;?>" class="optionid" 
+                        onchange="showAddButton(<?php echo $products[$i]->products_id;?>,this.value);">
+                            <?php
+                            for($j=0;$j<count($options);$j++)
+                            {
+                                $cart_array=getCartOptions($options[$j]->option_id);
+                            ?>
+                                <option value="<?php echo $options[$j]->option_id;?>" <?php if (in_array($options[$j]->option_id, $cart_array)){ ?>selected="selected"<?php } ?>>
+                                <?php echo $options[$j]->weight;?><?php echo $options[$j]->unit;?> - &#8377;<?php echo $options[$j]->price;?>
+                                <?php if($options[$j]->discount_price>0){?>
+                                    <del><?php echo $options[$j]->discount_price;?></del>
+                                <?php } ?>
+                                </option>
+                            <?php
+                            }
+                            ?>
+                            
+                    </select>
+                <!-- </div> -->
+                <br>
                 <?php
                         
                     }
@@ -65,7 +68,7 @@ for($i=0;$i<count($products);$i++)
                     <del><?php echo $options[0]->discount_price;?></del>
                 <?php } ?>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="col-xs-4 col-sm-4 col-md-3">
                 <?php
                 $incart=0;
                 $cartquantity=0;

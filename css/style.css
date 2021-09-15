@@ -1,15 +1,4 @@
-@font-face {
-  font-family: Gilroy-Bold;
-  src: url(Gilroy-Bold.woff2);
-}
-@font-face {
-  font-family: Gilroy-Medium;
-  src: url(Gilroy-Medium.woff2);
-}
-@font-face {
-  font-family: Gilroy-SemiBold;
-  src: url(Gilroy-SemiBold.woff2);
-}
+
 body, html {
     font-family: Gilroy-Medium;
     font-weight: 500;
@@ -18,6 +7,59 @@ body, html {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+div.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 30px;
+	margin-top: 50px;
+	font-size: 20px;
+  }
+  .fixedElement {
+	position: -webkit-sticky;
+    position:sticky;
+    top:0;
+}
+.header-fixed {
+	box-sizing: border-box;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    pointer-events: none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: white;
+}
+
+.category-fixed {
+	box-sizing: border-box;
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 36px 0px 12px;
+    overflow: auto;
+    height: calc(100vh - 178px);
+    position: sticky;
+    top: 120px;
+}
+
+.products-list {
+	box-sizing: border-box;
+    position: relative;
+    width: 550px;
+    border-left: 1px solid rgb(231, 232, 235);
+    border-right: 1px solid rgb(231, 232, 235);
+    flex-direction: column;
+}
+
+.cart-fixed {
+	box-sizing: border-box;
+    width: 324px;
+    transition: height 0.45s ease 0s;
+    height: calc(100vh - 378px);
+    position: sticky;
+    top: 120px;
 }
 
 /*the container must be positioned relative:*/

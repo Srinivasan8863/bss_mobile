@@ -83,10 +83,10 @@ $category_name = getCategoryName($category_id);
                                         -
                                 </button>
                             </div>&nbsp;
-                            <input type="text" readonly class="form-control" maxlength="4" size="4" 
+                            <p 
                                     name="qty<?php echo $products[$i]->products_id; ?>" 
-                                    id="qty<?php echo $products[$i]->products_id; ?>" 
-                                    value="<?php echo $cartquantity; ?>" >&nbsp;
+                                    id="qty<?php echo $products[$i]->products_id; ?>"
+                                    >&nbsp;<?php echo $cartquantity; ?></p>
                             <div class="input-group-btn">
                                 <button type="button" 
                                         onclick="addQuantity(<?php echo $products[$i]->products_id; ?>);" 
